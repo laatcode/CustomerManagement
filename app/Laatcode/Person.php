@@ -70,13 +70,45 @@ class Person{
   function getSurnames(){
     return $this->surnames;
   }
+
   function getTaxType(){
     return $this->taxType;
   }
+
   function getTaxId(){
     return $this->taxId;
   }
+
   function getBirth(){
     return $this->birth;
+  }
+
+  //Setters
+  function setPerson($person){
+    $this->names = $person['names'];
+    $this->surnames = $person['surnames'];
+    $this->taxType = $person['taxType'];
+    $this->taxId = $person['taxId'];
+    $this->birth = $person['birth'];
+  }
+
+  function setNames($names){
+    $this->names = $names;
+  }
+
+  function setSurnames($surnames){
+    $this->surnames = $surnames;
+  }
+
+  function setTaxType($taxType){
+    $this->taxType = $taxType;
+  }
+
+  function setTaxId($taxId){
+    $this->taxId = $taxId;
+  }
+
+  function setBirth($birth){
+    $this->birth = $birth;
   }
 }
