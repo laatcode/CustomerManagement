@@ -4,12 +4,13 @@ namespace App\Laatcode;
 
 class Person{
 
-  public $names;
-  public $surnames;
-  public $taxType;
-  public $taxId;
-  public $birth;
+  protected $names;
+  protected $surnames;
+  protected $taxType;
+  protected $taxId;
+  protected $birth;
 
+  // Constructors
   function __construct(){
     $params = func_get_args();
     $numParams = func_num_args();
@@ -49,5 +50,33 @@ class Person{
     $this->taxType = $taxType;
     $this->taxId = $taxId;
     $this->birth = $birth;
+  }
+
+  // Getters
+  function getPerson(){
+    return [
+      'names' => $this->names,
+      'surnames' => $this->surnames,
+      'taxType' => $this->taxType,
+      'taxId' => $this->taxId,
+      'birth' => $this->birth,
+    ];
+  }
+
+  function getNames(){
+    return $this->names;
+  }
+
+  function getSurnames(){
+    return $this->surnames;
+  }
+  function getTaxType(){
+    return $this->taxType;
+  }
+  function getTaxId(){
+    return $this->taxId;
+  }
+  function getBirth(){
+    return $this->birth;
   }
 }
