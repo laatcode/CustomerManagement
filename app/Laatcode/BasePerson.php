@@ -2,13 +2,15 @@
 
 namespace App\Laatcode;
 
-class Person extends Model{
+use Illuminate\Database\Eloquent\Model;
+
+class BasePerson extends Model{
 
   protected $names;
   protected $surnames;
   protected $taxType;
   protected $taxId;
-  protected $birth;
+  protected $birthdate;
 
   // Constructors
   function __construct(){
@@ -31,10 +33,10 @@ class Person extends Model{
     $this->surnames = $surnames;
   }
 
-  function __construct3($names, $surnames, $birth){
+  function __construct3($names, $surnames, $birthdate){
     $this->names = $names;
     $this->surnames = $surnames;
-    $this->birth = $birth;
+    $this->birthdate = $birthdate;
   }
 
   function __construct4($names, $surnames, $taxType, $taxId){
@@ -44,12 +46,12 @@ class Person extends Model{
     $this->taxId = $taxId;
   }
 
-  function __construct5($names, $surnames, $taxType, $taxId, $birth){
+  function __construct5($names, $surnames, $taxType, $taxId, $birthdate){
     $this->names = $names;
     $this->surnames = $surnames;
     $this->taxType = $taxType;
     $this->taxId = $taxId;
-    $this->birth = $birth;
+    $this->birthdate = $birthdate;
   }
 
   // Getters
@@ -59,7 +61,7 @@ class Person extends Model{
       'surnames' => $this->surnames,
       'taxType' => $this->taxType,
       'taxId' => $this->taxId,
-      'birth' => $this->birth,
+      'birthdate' => $this->birthdate,
     ];
   }
 
@@ -80,7 +82,7 @@ class Person extends Model{
   }
 
   function getBirth(){
-    return $this->birth;
+    return $this->birthdate;
   }
 
   //Setters
@@ -89,7 +91,7 @@ class Person extends Model{
     $this->surnames = $person['surnames'];
     $this->taxType = $person['taxType'];
     $this->taxId = $person['taxId'];
-    $this->birth = $person['birth'];
+    $this->birthdate = $person['birthdate'];
   }
 
   function setNames($names){
@@ -108,7 +110,7 @@ class Person extends Model{
     $this->taxId = $taxId;
   }
 
-  function setBirth($birth){
-    $this->birth = $birth;
+  function setBirth($birthdate){
+    $this->birthdate = $birthdate;
   }
 }
