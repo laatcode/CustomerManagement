@@ -2,7 +2,7 @@
 
 namespace App\Laatcode;
 
-class Person{
+class Person extends Model{
 
   protected $names;
   protected $surnames;
